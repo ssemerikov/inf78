@@ -1,0 +1,130 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --container-max: 1100px;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.nav__logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #555;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.nav__link:hover {
+  color: #222;
+  background: #f5f5f5;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  margin-top: 3rem;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  margin: 1.5em 0 0.5em;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0.75em 0; }
+
+a { color: #0066cc; }
+a:hover { text-decoration: underline; }
+
+/* Markdown elements */
+ul, ol { margin: 0.75em 0; padding-left: 1.5em; }
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  background: #f4f4f4;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #f8f8f8;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  h1 { font-size: 1.5rem; }
+}
