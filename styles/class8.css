@@ -1,0 +1,131 @@
+/* 8 клас — Мінімалістичний у стилі «Дія» */
+:root {
+  --c8-primary: #1a1a2e;
+  --c8-accent: #00a7e1;
+  --c8-bg: #f5f5f5;
+  --c8-card: #fff;
+  --c8-border: #e0e0e0;
+  --c8-text: #333;
+  --c8-muted: #666;
+}
+
+.class8-wrapper {
+  min-height: 100vh;
+  background: var(--c8-bg);
+}
+
+.class8-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--c8-border);
+  padding: 0;
+}
+
+.class8-nav a {
+  color: var(--c8-text);
+  text-decoration: none;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.9375rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.class8-nav a:hover {
+  border-bottom-color: var(--c8-accent);
+  color: var(--c8-primary);
+}
+
+.class8-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.class8-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--c8-primary);
+  margin-bottom: 1rem;
+}
+
+.class8-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c8-primary);
+  border-bottom: 1px solid var(--c8-border);
+  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.class8-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c8-text);
+}
+
+.card {
+  background: var(--c8-card);
+  border: 1px solid var(--c8-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+}
+
+.card--highlight {
+  border-left: 3px solid var(--c8-accent);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--c8-accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #008fc7;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--c8-accent);
+  border: 1px solid var(--c8-accent);
+}
+
+.class8-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.class8-content ul li a {
+  display: block;
+  background: var(--c8-card);
+  border: 1px solid var(--c8-border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  color: var(--c8-text);
+  font-size: 1rem;
+  transition: border-color 0.15s;
+}
+
+.class8-content ul li a:hover {
+  border-color: var(--c8-accent);
+}
+
+@media (max-width: 768px) {
+  .class8-nav {
+    flex-wrap: wrap;
+  }
+}
