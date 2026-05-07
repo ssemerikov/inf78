@@ -142,7 +142,66 @@ function drawLines(el, pairs, leftItems, rightItems) {
     svg.appendChild(line);
   }
 }
-function QuizDragDrop(el) {}
+function QuizDragDrop(el) {
+  const draggables = el.querySelectorAll('.quiz__drag-item');
+  const zones = el.querySelectorAll('.quiz__drop-zone');
+  const checkBtn = el.querySelector('.quiz__check');
+  const feedback = el.querySelector('.quiz__feedback');
+
+  draggables.forEach(item => {
+    item.setAttribute('draggable', 'true');
+    item.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('text/plain', item.dataset.id);
+      item.classList.add('quiz__drag-item--dragging');
+    });
+    item.addEventListener('dragend', () => {
+      item.classList.remove('quiz__drag-item--dragging');
+    });
+  });
+
+  zones.forEach(zone => {
+    zone.addEventListener('dragover', e => {
+      e.preventDefault();
+      zone.classList.add('quiz__drop-zone--over');
+    });
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('quiz__drop-zone--over');
+    });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('quiz__drop-zone--over');
+      const dragId = e.dataTransfer.getData('text/plain');
+      const dragItem = el.querySelector(`.quiz__drag-item[data-id="${dragId}"]`);
+      if (dragItem) {
+        if (zone.firstChild && zone.firstChild.classList.contains('quiz__drag-item')) {
+          const parent = dragItem.parentElement;
+          if (parent.classList.contains('quiz__drop-zone')) {
+            parent.appendChild(zone.firstChild);
+          } else {
+            el.querySelector('.quiz__drag-bank').appendChild(zone.firstChild);
+          }
+        }
+        zone.appendChild(dragItem);
+      }
+    });
+  });
+
+  checkBtn.addEventListener('click', () => {
+    let allCorrect = true;
+    zones.forEach(zone => {
+      const item = zone.querySelector('.quiz__drag-item');
+      if (item && item.dataset.id === zone.dataset.accept) {
+        zone.classList.add('quiz__drop-zone--correct');
+        zone.classList.remove('quiz__drop-zone--wrong');
+      } else {
+        zone.classList.add('quiz__drop-zone--wrong');
+        zone.classList.remove('quiz__drop-zone--correct');
+        allCorrect = false;
+      }
+    });
+    showFeedback(feedback, allCorrect);
+  });
+}
 function QuizOpen(el) {}
 function QuizAddOwn(el) {}
 
