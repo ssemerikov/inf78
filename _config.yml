@@ -1,0 +1,19 @@
+title: "Цифрові пристрої"
+description: "Навчальні матеріали з інформатики для 7 та 8 класу"
+lang: uk
+baseurl: ""
+url: ""
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: "class7"
+      type: pages
+    values:
+      layout: class7
+  - scope:
+      path: "class8"
+      type: pages
+    values:
+      layout: class8
