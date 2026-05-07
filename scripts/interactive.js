@@ -72,9 +72,76 @@ function QuizFillBlank(el) {
     showFeedback(feedback, allCorrect);
   });
 }
-function QuizMatch(el) {}
-function clearLines(el) {}
-function drawLines(el, pairs, leftItems, rightItems) {}
+function QuizMatch(el) {
+  const leftItems = el.querySelectorAll('.quiz__match-left .quiz__match-item');
+  const rightItems = el.querySelectorAll('.quiz__match-right .quiz__match-item');
+  const checkBtn = el.querySelector('.quiz__check');
+  const feedback = el.querySelector('.quiz__feedback');
+  const pairs = {};
+  let selectedLeft = null;
+
+  leftItems.forEach(item => {
+    item.addEventListener('click', () => {
+      leftItems.forEach(i => i.classList.remove('quiz__match-item--selected'));
+      item.classList.add('quiz__match-item--selected');
+      selectedLeft = item.dataset.id;
+    });
+  });
+
+  rightItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (!selectedLeft) return;
+      rightItems.forEach(i => i.classList.remove('quiz__match-item--selected'));
+      item.classList.add('quiz__match-item--selected');
+      pairs[selectedLeft] = item.dataset.id;
+      leftItems.forEach(i => {
+        if (i.dataset.id === selectedLeft) i.classList.add('quiz__match-item--paired');
+      });
+      item.classList.add('quiz__match-item--paired');
+      selectedLeft = null;
+      clearLines(el);
+      drawLines(el, pairs, leftItems, rightItems);
+    });
+  });
+
+  checkBtn.addEventListener('click', () => {
+    const correctPairs = JSON.parse(el.dataset.pairs);
+    let allCorrect = true;
+    for (const [leftId, rightId] of Object.entries(correctPairs)) {
+      if (pairs[leftId] !== rightId) {
+        allCorrect = false;
+        break;
+      }
+    }
+    showFeedback(feedback, allCorrect);
+  });
+}
+
+function clearLines(el) {
+  el.querySelectorAll('.quiz__match-line').forEach(l => l.remove());
+}
+
+function drawLines(el, pairs, leftItems, rightItems) {
+  const svg = el.querySelector('.quiz__match-svg');
+  if (!svg) return;
+  const svgRect = svg.getBoundingClientRect();
+  for (const [leftId, rightId] of Object.entries(pairs)) {
+    const left = el.querySelector(`.quiz__match-left .quiz__match-item[data-id="${leftId}"]`);
+    const right = el.querySelector(`.quiz__match-right .quiz__match-item[data-id="${rightId}"]`);
+    if (!left || !right) continue;
+    const lRect = left.getBoundingClientRect();
+    const rRect = right.getBoundingClientRect();
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', lRect.right - svgRect.left);
+    line.setAttribute('y1', lRect.top + lRect.height / 2 - svgRect.top);
+    line.setAttribute('x2', rRect.left - svgRect.left);
+    line.setAttribute('y2', rRect.top + rRect.height / 2 - svgRect.top);
+    line.setAttribute('class', 'quiz__match-line');
+    line.setAttribute('stroke', '#6b21a8');
+    line.setAttribute('stroke-width', '2');
+    svg.appendChild(line);
+  }
+}
 function QuizDragDrop(el) {}
 function QuizOpen(el) {}
 function QuizAddOwn(el) {}

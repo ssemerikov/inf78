@@ -201,3 +201,44 @@ th {
   border-color: #ef4444;
   background: #fee2e2;
 }
+
+.quiz__match-container {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.quiz__match-left, .quiz__match-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quiz__match-item {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.quiz__match-item--selected {
+  border-color: #2563eb;
+  background: #dbeafe;
+}
+
+.quiz__match-item--paired {
+  background: #f3e8ff;
+  border-color: #6b21a8;
+}
+
+.quiz__match-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
