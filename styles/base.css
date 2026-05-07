@@ -295,3 +295,54 @@ th {
   border-style: solid;
   background: #fee2e2;
 }
+
+.quiz__textarea {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 0.5rem;
+  resize: vertical;
+}
+
+.quiz__reference {
+  display: none;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.quiz__feedback--info { color: #0369a1; }
+
+.quiz__add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz__add-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 0.5rem;
+  font-family: inherit;
+}
+
+.quiz__add-list {
+  list-style: none;
+  padding: 0;
+}
+
+.quiz__add-list li {
+  padding: 0.3rem 0.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}

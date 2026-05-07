@@ -202,8 +202,47 @@ function QuizDragDrop(el) {
     showFeedback(feedback, allCorrect);
   });
 }
-function QuizOpen(el) {}
-function QuizAddOwn(el) {}
+function QuizOpen(el) {
+  const checkBtn = el.querySelector('.quiz__check');
+  const feedback = el.querySelector('.quiz__feedback');
+  const reference = el.querySelector('.quiz__reference');
+  const textarea = el.querySelector('.quiz__textarea');
+
+  checkBtn.addEventListener('click', () => {
+    if (textarea.value.trim().length < 3) {
+      feedback.textContent = 'Напишіть вашу відповідь';
+      feedback.className = 'quiz__feedback quiz__feedback--warn';
+      return;
+    }
+    reference.style.display = 'block';
+    feedback.textContent = 'Порівняйте вашу відповідь з еталонною';
+    feedback.className = 'quiz__feedback quiz__feedback--info';
+    checkBtn.disabled = true;
+  });
+}
+
+function QuizAddOwn(el) {
+  const input = el.querySelector('.quiz__add-input');
+  const addBtn = el.querySelector('.quiz__add-btn');
+  const list = el.querySelector('.quiz__add-list');
+  const reference = el.querySelector('.quiz__reference');
+
+  addBtn.addEventListener('click', () => {
+    const val = input.value.trim();
+    if (!val) return;
+    const item = document.createElement('li');
+    item.textContent = val;
+    list.appendChild(item);
+    input.value = '';
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addBtn.click();
+    }
+  });
+}
 
 function showFeedback(el, isCorrect) {
   el.textContent = isCorrect ? '✓ Правильно!' : '✗ Спробуйте ще раз';
