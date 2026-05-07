@@ -1,8 +1,8 @@
 title: "Цифрові пристрої"
 description: "Навчальні матеріали з інформатики для 7 та 8 класу"
 lang: uk
-baseurl: ""
-url: ""
+baseurl: "/inf78"
+url: "https://ssemerikov.github.io"
 markdown: kramdown
 kramdown:
   input: GFM
