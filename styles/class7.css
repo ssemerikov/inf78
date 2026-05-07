@@ -1,0 +1,138 @@
+/* 7 клас — Яскравий та ігровий */
+.class7-wrapper {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.class7-sidebar {
+  background: linear-gradient(135deg, #6b21a8, #2563eb);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}
+
+.class7-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.class7-sidebar a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.03);
+}
+
+.class7-content {
+  min-width: 0;
+}
+
+.class7-content h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #6b21a8, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.class7-content h2 {
+  font-size: 1.5rem;
+  color: #6b21a8;
+  border-bottom: 3px solid #fbbf24;
+  padding-bottom: 0.25rem;
+}
+
+.class7-content h3 {
+  color: #2563eb;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card--highlight {
+  border-left: 5px solid #fbbf24;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn--primary {
+  background: #fbbf24;
+  color: #222;
+}
+
+.btn--primary:hover {
+  background: #f59e0b;
+}
+
+.btn--secondary {
+  background: #e9d5ff;
+  color: #6b21a8;
+}
+
+.class7-content ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.class7-content ul li a {
+  display: block;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.class7-content ul li a:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .class7-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .class7-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 12px;
+  }
+}
