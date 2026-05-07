@@ -1,0 +1,18 @@
+---
+layout: default
+css: /styles/class8.css
+---
+
+<div class="class8-wrapper">
+  <nav class="class8-nav">
+    <a href="{{ '/class8/' | relative_url }}">Головна</a>
+    <a href="{{ '/class8/theory/main-content/' | relative_url }}">Теорія</a>
+    <a href="{{ '/class8/theory/examples/' | relative_url }}">Приклади</a>
+    <a href="{{ '/class8/practice/tasks/' | relative_url }}">Завдання</a>
+    <a href="{{ '/class8/practice/projects/' | relative_url }}">Проекти</a>
+    <a href="{{ '/class8/tests/self-check/' | relative_url }}">Самоперевірка</a>
+  </nav>
+  <div class="class8-content">
+    {{ content }}
+  </div>
+</div>

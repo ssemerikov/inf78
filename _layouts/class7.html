@@ -1,0 +1,18 @@
+---
+layout: default
+css: /styles/class7.css
+---
+
+<div class="class7-wrapper">
+  <aside class="class7-sidebar">
+    <a href="{{ '/class7/' | relative_url }}">Головна</a>
+    <a href="{{ '/class7/theory/main-content/' | relative_url }}">Теорія</a>
+    <a href="{{ '/class7/theory/examples/' | relative_url }}">Приклади</a>
+    <a href="{{ '/class7/practice/tasks/' | relative_url }}">Завдання</a>
+    <a href="{{ '/class7/practice/projects/' | relative_url }}">Проекти</a>
+    <a href="{{ '/class7/tests/self-check/' | relative_url }}">Самоперевірка</a>
+  </aside>
+  <div class="class7-content">
+    {{ content }}
+  </div>
+</div>
