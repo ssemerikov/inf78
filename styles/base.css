@@ -179,3 +179,25 @@ th {
 .quiz__feedback--success { color: #16a34a; }
 .quiz__feedback--error { color: #dc2626; }
 .quiz__feedback--warn { color: #d97706; }
+
+.quiz__blank {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #555;
+  padding: 0.2rem 0.5rem;
+  font-size: inherit;
+  font-family: inherit;
+  width: 120px;
+  background: transparent;
+  border-radius: 2px;
+}
+
+.quiz__blank--correct {
+  border-color: #22c55e;
+  background: #dcfce7;
+}
+
+.quiz__blank--wrong {
+  border-color: #ef4444;
+  background: #fee2e2;
+}

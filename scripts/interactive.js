@@ -50,7 +50,28 @@ function QuizChoice(el) {
   });
 }
 
-function QuizFillBlank(el) {}
+function QuizFillBlank(el) {
+  const inputs = el.querySelectorAll('.quiz__blank');
+  const checkBtn = el.querySelector('.quiz__check');
+  const feedback = el.querySelector('.quiz__feedback');
+
+  checkBtn.addEventListener('click', () => {
+    let allCorrect = true;
+    inputs.forEach(input => {
+      const correct = input.dataset.answer.toLowerCase().trim();
+      const userVal = input.value.toLowerCase().trim();
+      if (userVal === correct) {
+        input.classList.remove('quiz__blank--wrong');
+        input.classList.add('quiz__blank--correct');
+      } else {
+        input.classList.add('quiz__blank--wrong');
+        input.classList.remove('quiz__blank--correct');
+        allCorrect = false;
+      }
+    });
+    showFeedback(feedback, allCorrect);
+  });
+}
 function QuizMatch(el) {}
 function clearLines(el) {}
 function drawLines(el, pairs, leftItems, rightItems) {}
