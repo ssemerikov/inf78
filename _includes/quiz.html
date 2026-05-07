@@ -1,0 +1,89 @@
+<!-- Quiz include template — use HTML blocks directly in .md files -->
+
+<!-- Example: QuizChoice -->
+<!--
+<div class="quiz" data-type="choice" data-answer="2">
+  <p class="quiz__question">Питання?</p>
+  <div class="quiz__options">
+    <label><input type="radio" name="q1" value="1"> Варіант 1</label>
+    <label><input type="radio" name="q1" value="2"> Варіант 2</label>
+    <label><input type="radio" name="q1" value="3"> Варіант 3</label>
+  </div>
+  <button class="quiz__check btn btn--primary">Перевірити</button>
+  <div class="quiz__feedback"></div>
+</div>
+-->
+
+<!-- Example: QuizFillBlank -->
+<!--
+<div class="quiz" data-type="fill-blank">
+  <p class="quiz__question">Центральний процесор — це <input class="quiz__blank" data-answer="процесор"> комп'ютера.</p>
+  <button class="quiz__check btn btn--primary">Перевірити</button>
+  <div class="quiz__feedback"></div>
+</div>
+-->
+
+<!-- Example: QuizMatch -->
+<!--
+<div class="quiz" data-type="match" data-pairs='{"cpu":"обробка","ram":"оперативна пам&#x2019;ять","ssd":"зберігання"}'>
+  <p class="quiz__question">Знайдіть пари</p>
+  <div class="quiz__match-container">
+    <svg class="quiz__match-svg"></svg>
+    <div class="quiz__match-left">
+      <div class="quiz__match-item" data-id="cpu">Процесор</div>
+      <div class="quiz__match-item" data-id="ram">ОЗП</div>
+      <div class="quiz__match-item" data-id="ssd">SSD</div>
+    </div>
+    <div class="quiz__match-right">
+      <div class="quiz__match-item" data-id="обробка">Обробка даних</div>
+      <div class="quiz__match-item" data-id="оперативна пам&#x2019;ять">Оперативна пам&#x2019;ять</div>
+      <div class="quiz__match-item" data-id="зберігання">Зберігання даних</div>
+    </div>
+  </div>
+  <button class="quiz__check btn btn--primary">Перевірити</button>
+  <div class="quiz__feedback"></div>
+</div>
+-->
+
+<!-- Example: QuizDragDrop -->
+<!--
+<div class="quiz" data-type="drag-drop">
+  <p class="quiz__question">Розмістіть пристрої у відповідні категорії</p>
+  <div class="quiz__drag-bank">
+    <div class="quiz__drag-item" data-id="keyboard">Клавіатура</div>
+    <div class="quiz__drag-item" data-id="monitor">Монітор</div>
+    <div class="quiz__drag-item" data-id="cpu">Процесор</div>
+  </div>
+  <div class="quiz__drop-zones">
+    <div class="quiz__drop-zone" data-accept="keyboard">Введення: </div>
+    <div class="quiz__drop-zone" data-accept="monitor">Виведення: </div>
+    <div class="quiz__drop-zone" data-accept="cpu">Обробка: </div>
+  </div>
+  <button class="quiz__check btn btn--primary">Перевірити</button>
+  <div class="quiz__feedback"></div>
+</div>
+-->
+
+<!-- Example: QuizOpen -->
+<!--
+<div class="quiz" data-type="open">
+  <p class="quiz__question">Поясніть, що таке тактова частота процесора.</p>
+  <textarea class="quiz__textarea" placeholder="Ваша відповідь..."></textarea>
+  <button class="quiz__check btn btn--primary">Показати еталон</button>
+  <div class="quiz__reference">Тактова частота — кількість операцій за секунду, вимірюється в гігагерцах (ГГц).</div>
+  <div class="quiz__feedback"></div>
+</div>
+-->
+
+<!-- Example: QuizAddOwn -->
+<!--
+<div class="quiz" data-type="add-own">
+  <p class="quiz__question">Назвіть пристрої введення, які ви знаєте.</p>
+  <div class="quiz__add-row">
+    <input class="quiz__add-input" placeholder="Введіть пристрій...">
+    <button class="quiz__add-btn btn btn--secondary">Додати</button>
+  </div>
+  <ul class="quiz__add-list"></ul>
+  <div class="quiz__reference">Еталон: клавіатура, миша, мікрофон, сканер, веб-камера, touchscreen</div>
+</div>
+-->

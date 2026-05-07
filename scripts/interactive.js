@@ -72,6 +72,7 @@ function QuizFillBlank(el) {
     showFeedback(feedback, allCorrect);
   });
 }
+
 function QuizMatch(el) {
   const leftItems = el.querySelectorAll('.quiz__match-left .quiz__match-item');
   const rightItems = el.querySelectorAll('.quiz__match-right .quiz__match-item');
@@ -142,6 +143,7 @@ function drawLines(el, pairs, leftItems, rightItems) {
     svg.appendChild(line);
   }
 }
+
 function QuizDragDrop(el) {
   const draggables = el.querySelectorAll('.quiz__drag-item');
   const zones = el.querySelectorAll('.quiz__drop-zone');
@@ -202,6 +204,7 @@ function QuizDragDrop(el) {
     showFeedback(feedback, allCorrect);
   });
 }
+
 function QuizOpen(el) {
   const checkBtn = el.querySelector('.quiz__check');
   const feedback = el.querySelector('.quiz__feedback');
